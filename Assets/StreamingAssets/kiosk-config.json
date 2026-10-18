@@ -1,0 +1,49 @@
+{
+  "organization": "金屬工業研究發展中心",
+  "title": "金屬中心\n互動展示",
+  "lede": "點一下右邊的項目就能開始，畫面左上角的「首頁」可以隨時回到這裡。",
+  "colorNote": "右側各項目的顏色，取自鋼材回火時表面出現的氧化色，由淺到深對應溫度由低到高。",
+  "idleReturnSeconds": 180,
+  "fullscreen": true,
+  "exitHoldSeconds": 5,
+  "webHostPath": "Apps/WebHost/WebHost.exe",
+  "servers": [
+    { "id": "rwd", "path": "Apps/RwdServer/rwd-test-server.exe", "args": "", "port": 3000 }
+  ],
+  "services": [
+    {
+      "id": "winform",
+      "name": "人員資料表單",
+      "description": "填寫表單、查詢名單，檢視資料卡片。",
+      "type": "exe",
+      "color": "#D2A44E",
+      "path": "Apps/ResponsiveTestApp/ResponsiveTestApp.exe",
+      "args": "--embedded --parent-pid={pid}",
+      "preload": true
+    },
+    {
+      "id": "rwd",
+      "name": "響應式網站",
+      "description": "同一個網站在不同螢幕尺寸下的版面。",
+      "type": "web",
+      "color": "#8E5A2E",
+      "url": "http://localhost:3000/",
+      "profile": "local-rwd",
+      "server": "rwd",
+      "preload": true
+    },
+    {
+      "id": "camera",
+      "name": "即時影像辨識",
+      "description": "用鏡頭拍攝工件，即時判讀是否有異常。",
+      "type": "web",
+      "color": "#22457A",
+      "url": "https://uaitc.com:40056/",
+      "profile": "camera",
+      "camera": "",
+      "usesCamera": true,
+      "preload": false,
+      "closeWhenHidden": true
+    }
+  ]
+}

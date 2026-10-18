@@ -1,0 +1,17 @@
+# 文字檔統一換行；Unity 的 YAML 資產保持 LF
+* text=auto
+*.cs text eol=lf
+*.uss text eol=lf
+*.tss text eol=lf
+*.json text eol=lf
+*.unity text eol=lf
+*.asset text eol=lf
+*.meta text eol=lf
+*.prefab text eol=lf
+
+# 二進位
+*.exe binary
+*.dll binary
+*.otf binary
+*.ttf binary
+*.png binary

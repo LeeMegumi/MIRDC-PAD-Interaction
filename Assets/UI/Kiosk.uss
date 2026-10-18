@@ -1,0 +1,237 @@
+/* MIRDC 展示主程式樣式
+   設計規則：平塗色塊、直角、不用漸層與陰影；服務色取自鋼材回火色。
+   單位以 1920×1280（Surface 3:2）為基準，由 PanelSettings 等比縮放。 */
+
+.k-root {
+    flex-grow: 1;
+    background-color: rgb(228, 230, 229);   /* 冷軋鋼底色 #E4E6E5 */
+    color: rgb(22, 25, 27);                 /* 石墨 #16191B */
+}
+
+.k-root .unity-label {
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+}
+
+.k-screen {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    opacity: 1;
+    transition-property: opacity, translate;
+    transition-duration: 0.18s, 0.18s;
+    transition-timing-function: ease-out-cubic, ease-out-cubic;
+}
+
+.k-screen--hidden {
+    opacity: 0;
+    translate: 0 16px;
+}
+
+/* ---------------- 首頁 ---------------- */
+
+.k-home {
+    flex-direction: row;
+}
+
+.k-side {
+    width: 780px;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 72px 64px 64px 72px;
+}
+
+.k-org {
+    font-size: 26px;
+}
+
+.k-title {
+    font-size: 136px;
+    letter-spacing: -2px;
+}
+
+.k-lede {
+    font-size: 30px;
+    margin-top: 40px;
+    width: 620px;
+}
+
+.k-clock {
+    font-size: 96px;
+    letter-spacing: -2px;
+}
+
+.k-date {
+    font-size: 26px;
+    margin-top: 12px;
+}
+
+.k-note {
+    font-size: 20px;
+    margin-top: 40px;
+    width: 520px;
+    color: rgb(80, 86, 90);
+}
+
+.k-bands {
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.k-bands--grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.k-band {
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 64px;
+    transition-property: opacity, scale;
+    transition-duration: 0.08s, 0.08s;
+}
+
+.k-bands--grid .k-band {
+    flex-grow: 0;
+    flex-basis: auto;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 44px 48px;
+}
+
+.k-band:active {
+    opacity: 0.86;
+    scale: 0.985 0.985;
+}
+
+.k-band-text {
+    flex-shrink: 1;
+}
+
+.k-band-name {
+    font-size: 76px;
+}
+
+.k-bands--grid .k-band-name {
+    font-size: 58px;
+}
+
+.k-band-desc {
+    font-size: 28px;
+    margin-top: 18px;
+    max-width: 800px;
+}
+
+.k-bands--grid .k-band-desc {
+    font-size: 24px;
+    margin-top: 12px;
+}
+
+.k-band-kind {
+    font-size: 26px;
+    flex-shrink: 0;
+    margin-left: 32px;
+}
+
+.k-bands--grid .k-band-kind {
+    margin-left: 0;
+}
+
+/* ---------------- 服務頁 ---------------- */
+
+.k-service {
+    flex-direction: column;
+}
+
+.k-bar {
+    height: 112px;
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: rgb(22, 25, 27);
+    color: rgb(255, 255, 255);
+}
+
+.k-home-btn {
+    width: 220px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition-property: opacity;
+    transition-duration: 0.08s;
+}
+
+.k-home-btn:active {
+    opacity: 0.8;
+}
+
+.k-home-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+}
+
+.k-home-label {
+    font-size: 34px;
+}
+
+.k-bar-title {
+    flex-grow: 1;
+    font-size: 38px;
+    padding-left: 40px;
+    -unity-text-align: middle-left;
+}
+
+.k-tool {
+    width: 180px;
+    margin-left: 4px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(36, 41, 45);
+}
+
+.k-tool:active {
+    background-color: rgb(58, 64, 69);
+}
+
+.k-tool-label {
+    font-size: 28px;
+}
+
+.k-content {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(211, 215, 214);
+}
+
+.k-message {
+    font-size: 34px;
+    color: rgb(80, 86, 90);
+    -unity-text-align: middle-center;
+    max-width: 1200px;
+}
+
+.k-retry {
+    margin-top: 40px;
+    padding: 24px 56px;
+    background-color: rgb(22, 25, 27);
+}
+
+.k-retry:active {
+    background-color: rgb(58, 64, 69);
+}
+
+.k-retry-label {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.k-hidden {
+    display: none;
+}
